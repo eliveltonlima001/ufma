@@ -74,9 +74,10 @@ col3.metric(label="Imóveis que Aceitam Animais (%)", value=f"{formatar_numero(p
 # Cálculo do Imposto Médio em relação ao Aluguel
 imposto_medio_aluguel = (df['property tax (R$)'] / df['rent amount (R$)']).mean() * 100
 
-# Exibir no Card
-col4.metric(label="% Imposto / Aluguel Total", value=f"{formatar_numero(imposto_medio_aluguel)}%")
-
+col4.metric(
+    label="% Imposto / Aluguel Total",
+    value=f"{formatar_numero(imposto_medio_aluguel).replace('R$ ', '')}%"
+)
 # Exibir a quantidade total de imóveis
 col5.metric(label="Quantidade Total de Imóveis", value=f"{total_imoveis:,.0f}".replace(",", "X").replace(".", ",").replace("X", "."))
 
