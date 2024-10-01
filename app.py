@@ -250,6 +250,7 @@ fig_rent_m2_cluster.update_layout(
 )
 
 # Exibir o gráfico
+fig_rent_m2_cluster.update_layout(xaxis_title='', xaxis_showgrid=False, yaxis_showgrid=False)
 col9.plotly_chart(fig_rent_m2_cluster, use_container_width=True)
 
 
